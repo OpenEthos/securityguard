@@ -39,5 +39,7 @@ jobs:
           # This allows the tool to create a new Git tag and update the version file.
           # Use the default GITHUB_TOKEN provided by GitHub Actions.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 🚩 Required for PyPI upload. The semantic-release tool looks for this.
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: |
           semantic-release publish
