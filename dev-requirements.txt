@@ -1,0 +1,15 @@
+-r requirements.txt
+
+-e .
+
+pytest
+pytest-cov
+
+black
+isort
+
+sphinx
+sphinx-autodoc-typehints
+sphinx-rtd-theme
+
+

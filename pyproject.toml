@@ -1,0 +1,69 @@
+[project]
+name = "securityguard"
+version = "0.1.0" # This will be updated by a script or standalone file
+description = "A security monitoring and alerting tool."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+keywords = ["security", "monitoring", "alerting"]
+authors = [
+    { name = "Jason Miller", email = "jason.miller@thoughtparameters.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Security",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "pydantic>=1.8",
+    "rich>=10.0",
+    "click>=8.0",
+    "requests>=2.25",
+    "semantic-release>=7.0",
+    "build>=0.7",
+    # Add other dependencies from requirements.txt here
+]
+
+[project.scripts]
+securityguard-cli = "securityguard.cli:main"
+securityguard-daemon = "securityguard.daemon:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=3.0",
+    "sphinx>=4.0",
+    "sphinx_rtd_theme>=1.0",
+    "black>=22.0",
+    "isort>=5.0",
+    # Add other development dependencies from dev-requirements.txt here
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.semantic_release]
+version_variable = "securityguard/__init__.py:__version__" # Or a standalone file like VERSION
+branch = "main"
+upload_to_pypi = false # Set to true if you want to upload to PyPI automatically
+build_command = "python -m build"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
