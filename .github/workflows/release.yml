@@ -6,15 +6,14 @@ on:
     branches:
       - main
 
-permissions:
-  # This is important for the GitHub token to have the necessary permissions
-  # to create releases, push tags, and update package versions.
-  # The `contents: write` permission is crucial for `semantic-release`.
-  contents: write
-
 jobs:
   release:
     runs-on: ubuntu-latest # Standard Linux runner
+    permissions:
+      # This is important for the GitHub token to have the necessary permissions
+      # to create releases, push tags, and update package versions.
+      # The `contents: write` permission is crucial for `semantic-release`.
+      contents: write
 
     steps:
       - name: Checkout repository
