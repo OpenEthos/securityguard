@@ -39,4 +39,4 @@ jobs:
           # 2. Updates the version in 'securityguard/__init__.py'.
           # 3. Runs 'python -m build' (your build_command).
           # 4. Creates a Git tag and a GitHub release.
-          semantic-release publish --ci
+          semantic-release publish
