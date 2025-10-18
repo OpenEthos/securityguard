@@ -1,5 +1,5 @@
 [project]
-name = "securityguard"
+name = "openethos-securityguard"
 version = "0.1.0" # This will be updated by a script or standalone file
 description = "A security monitoring and alerting tool."
 readme = "README.md"
@@ -54,12 +54,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-
-[tool.semantic_release]
-version_variable = "securityguard/__init__.py:__version__" # Or a standalone file like VERSION
-branch = "main"
-upload_to_pypi = false # Set to true if you want to upload to PyPI automatically
-build_command = "python -m build"
 
 [tool.isort]
 profile = "black"
