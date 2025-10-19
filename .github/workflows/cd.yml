@@ -83,6 +83,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           git_committer_name: "github-actions"
           git_committer_email: "actions@users.noreply.github.com"
+          verbosity: "2"  # Increase verbosity for more detailed logs
+          build: true
+          commit: true
+          tag: true
+          push: true
 
       - name: Publish | Upload to GitHub Release Assets
         uses: python-semantic-release/publish-action@v10.4.1
@@ -90,6 +95,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ steps.release.outputs.tag }}
+          verbosity: "2"  # Increase verbosity for more detailed logs
 
       - name: Upload | Distribution Artifacts
         uses: actions/upload-artifact@v4
