@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.1 (2025-10-19)
+
+### Bug Fixes
+
+- Revert version to 0.0.0 and remove unused dependencies and CLI files
+  ([`02b79ba`](https://github.com/OpenEthos/securityguard/commit/02b79badb2ae13c1b20b09b704a2268a6aedcd8a))
+
+
 ## v1.0.0 (2025-10-18)
 
 ### Bug Fixes
