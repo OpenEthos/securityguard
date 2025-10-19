@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.0 (2025-10-19)
+
+### Features
+
+- Enhance CI/CD workflow with increased verbosity and additional build options
+  ([`7832c86`](https://github.com/OpenEthos/securityguard/commit/7832c86e78438edceedbf5ac4e6c517983f0bdc1))
+
+
 ## v1.0.1 (2025-10-19)
 
 ### Bug Fixes
