@@ -1,20 +1,29 @@
+
+import sys
+import os
+from rich.console import Console
+from rich.panel import Panel
+from rich.status import Status
+from rich.text import Text
+from rich.box import ROUNDED
+import click
+import logging
+
 def main():
     """Entry point for the SecurityGuard CLI application."""
-    import sys
-    import os
-    from rich.console import Console
-    from rich.panel import Panel
-    from rich.status import Status
-    from rich.text import Text
-    from rich.box import ROUNDED
-    import click
-    import logging
-
     # Setup logging
-    logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-    logger = logging.getLogger('securityguard')
+    # logging.basicConfig(level=logging.DEBUG, format='%(message)s')
+    # logger = logging.getLogger('securityguard')
 
-    console = Console()
+    # console = Console()
+
+    # logger.debug("Starting SecurityGuard...")
+    # # Display a welcome panel
+    # welcome_text = Text.from_markup(
+    #     "[bold green]Welcome to SecurityGuard![/bold green]\n"
+    # )
+    # console.print(Panel(welcome_text, box=ROUNDED, title="SecurityGuard", subtitle="Your Security Companion"))
+    # logger.debug("Welcome panel displayed.")
 
     # @click.command()
     # @click.option('--path', '-p', default='.', help='Path to the project directory to scan.')
