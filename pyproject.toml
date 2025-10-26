@@ -24,6 +24,7 @@ dependencies = [
     "rich>=10.0",
     "click>=8.0",
     "requests>=2.25",
+    "PyYAML>=6.0.3"
 ]
 
 [project.scripts]
