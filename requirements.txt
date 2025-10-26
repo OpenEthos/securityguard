@@ -5,3 +5,4 @@ requests
 build
 wheel
 setuptools
+PyYAML

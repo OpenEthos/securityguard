@@ -8,35 +8,11 @@ from rich.text import Text
 from rich.box import ROUNDED
 import click
 import logging
+from securityguard.main.workflow import MainWorkflow
 
 def main():
     """Entry point for the SecurityGuard CLI application."""
-    # Setup logging
-    # logging.basicConfig(level=logging.DEBUG, format='%(message)s')
-    # logger = logging.getLogger('securityguard')
-
-    # console = Console()
-
-    # logger.debug("Starting SecurityGuard...")
-    # # Display a welcome panel
-    # welcome_text = Text.from_markup(
-    #     "[bold green]Welcome to SecurityGuard![/bold green]\n"
-    # )
-    # console.print(Panel(welcome_text, box=ROUNDED, title="SecurityGuard", subtitle="Your Security Companion"))
-    # logger.debug("Welcome panel displayed.")
-
-    # @click.command()
-    # @click.option('--path', '-p', default='.', help='Path to the project directory to scan.')
-    # @click.option('--output', '-o', default='security_report.json', help='Output file for the security report.')
-    # @click.option('--config', '-c', default=None, help='Path to configuration file.')
-    # def sg(path, output, config):
-    #     """SecurityGuard CLI command to analyze project dependencies for vulnerabilities."""
-    #     logger.debug(f"Starting scan for path: {path}")
-    #     logger.debug(f"Using config file: {config or 'default settings'}")
-    #     logger.debug(f"Report output file: [bold]{output}[/bold]")
-
-        # Use Rich Status to provide visual feedback during the process
-        # The spinner stops automatically when the 'with' block exits
+    MainWorkflow().main()
         # with Status("[status]Analyzing dependencies...[/status]", console=console, spinner="dots") as status:
         #     try:
         #         # --- START SCAN LOGIC SIMULATION ---
