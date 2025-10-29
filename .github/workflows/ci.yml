@@ -21,6 +21,4 @@ jobs:
 
       - name: Python Linting
         id: linting-python
-        uses: thoughtparametersllc/python-linting@main
-
-        
+        uses: thoughtparametersllc/python-linting@2293b58d6f3a31159d4e30e184209d70b2532803
