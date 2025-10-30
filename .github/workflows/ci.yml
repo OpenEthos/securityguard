@@ -23,6 +23,11 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
+      - name: Install Python Dependencies
+        id: install-dependencies
+        run: |
+          pip3 install -r requirements.txt
+
       - name: Python Linting
         id: linting-python
         uses: thoughtparametersllc/python-linting@4626c8918ee4b32eac38c3a258fa074560bd41ce
