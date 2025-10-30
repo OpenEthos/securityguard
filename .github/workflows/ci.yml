@@ -2,11 +2,15 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches:
-      - main
+    types: [opened,synchronize]
+
+# Add default permissions of read
+permissions:
+  contents: read
+
 
 jobs:
-  lint:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -21,4 +25,4 @@ jobs:
 
       - name: Python Linting
         id: linting-python
-        uses: thoughtparametersllc/python-linting@2293b58d6f3a31159d4e30e184209d70b2532803
+        uses: thoughtparametersllc/python-linting@4626c8918ee4b32eac38c3a258fa074560bd41ce
