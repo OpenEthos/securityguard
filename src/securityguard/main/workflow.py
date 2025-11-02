@@ -104,7 +104,6 @@ class MainWorkflow:
     def main(self):
         """Execute the main workflow."""
         self.display_welcome_panel()
-        self.user_error_if_not_root()
         self.permission_check()
         self.service_check()
         self.config_check()
