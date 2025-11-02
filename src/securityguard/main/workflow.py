@@ -66,8 +66,7 @@ class MainWorkflow:
     def user_error_if_not_root(self):
         """Raise an error if the current user is not root."""
         if self.check_current_user() != "root":
-            sys.exit(2)
-        raise NotRootUserError('This operation requires root privileges.')
+            raise NotRootUserError('This operation requires root privileges.')
 
     def permission_check(self):
         """Check system permissions."""
@@ -93,10 +92,10 @@ class MainWorkflow:
     def interface_check(self):
         """Check network interfaces."""
 
-    def dns_posioning_check(self):
+    def dns_poisoning_check(self):
         """Check for DNS poisoning."""
 
-    def arp_posioning_check(self):
+    def arp_poisoning_check(self):
         """Check for ARP poisoning."""
 
     def botnet_check(self):
@@ -114,6 +113,6 @@ class MainWorkflow:
         self.unusual_activity_check()
         self.internet_check()
         self.interface_check()
-        self.dns_posioning_check()
-        self.arp_posioning_check()
+        self.dns_poisoning_check()
+        self.arp_poisoning_check()
         self.botnet_check()
