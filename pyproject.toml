@@ -39,7 +39,7 @@ issues = "https://github.com/OpenEthos/securityguard/issues"
 
 [project.optional-dependencies]
 build = [
-  "build ~= 1.2"
+  "build ~= 1.2",
   "setuptools >= 61.0"
 ]
 
