@@ -26,7 +26,7 @@ jobs:
       - name: Install Python Dependencies
         id: install-dependencies
         run: |
-          pip3 install -r requirements.txt
+          pip3 install -r dev-requirements.txt
 
       - name: Python Linting
         id: linting-python
