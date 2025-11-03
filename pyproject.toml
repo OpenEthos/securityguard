@@ -91,15 +91,11 @@ where = ["src"]
 [tool.semantic_release]
 commit_parser = "conventional"
 commit_parser_options = { parse_squash_commits = true, ignore_merge_commits = true }
+version_toml = ["pyproject.toml:project.version"]
 build_command = """
   python -m pip install -e .[build]
   python -m build .
 """
-
-[tool.semantic_release.version_variable]
-file = "pyproject.toml"
-key = "version"
-
 
 [tool.pytest.ini_options]
 pythonpath = [
