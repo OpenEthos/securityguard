@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.2 (2025-11-03)
+
+### Bug Fixes
+
+- Ensure deploy step runs even if release job fails
+  ([`44ae5ee`](https://github.com/OpenEthos/securityguard/commit/44ae5eeffa74b4c9b726652766aea8d4f484c2a2))
+
+
 ## v1.2.1 (2025-11-03)
 
 ### Bug Fixes
