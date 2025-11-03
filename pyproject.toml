@@ -40,6 +40,7 @@ issues = "https://github.com/OpenEthos/securityguard/issues"
 [project.optional-dependencies]
 build = [
   "build ~= 1.2"
+  "setuptools >= 61.0"
 ]
 docs = [
   "Sphinx ~= 6.0",
@@ -93,7 +94,7 @@ commit_parser_options = { parse_squash_commits = true, ignore_merge_commits = tr
 build_command = """
   python -m pip install -e .[build]
   python -m build .
-""""
+"""
 
 [tool.semantic_release.version_variable]
 file = "pyproject.toml"
