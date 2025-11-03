@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.3 (2025-11-03)
+
+### Bug Fixes
+
+- Add push event trigger to CI workflow
+  ([`c5a3b41`](https://github.com/OpenEthos/securityguard/commit/c5a3b41ec4351872379d487c3d4b81ceb5e4209d))
+
+
 ## v1.2.2 (2025-11-03)
 
 ### Bug Fixes
