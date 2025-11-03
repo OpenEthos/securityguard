@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.1 (2025-11-03)
+
+### Bug Fixes
+
+- Update semantic release configuration to specify version source
+  ([`7b66ac4`](https://github.com/OpenEthos/securityguard/commit/7b66ac4bfebe0d120dc6b9ed80ded3383c16a2ce))
+
+
 ## v1.2.0 (2025-11-03)
 
 ### Bug Fixes
