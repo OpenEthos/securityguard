@@ -3,11 +3,11 @@ name: Continuous Integration
 on:
   pull_request:
     types: [opened,synchronize]
+  push:
 
 # Add default permissions of read
 permissions:
   contents: read
-
 
 jobs:
   linting:
