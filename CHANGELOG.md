@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.4 (2025-11-04)
+
+### Bug Fixes
+
+- Update README to include CI/CD badges
+  ([`e8048e3`](https://github.com/OpenEthos/securityguard/commit/e8048e3e819783a428b5154828c42b78952b2b77))
+
+
 ## v1.2.3 (2025-11-03)
 
 ### Bug Fixes
