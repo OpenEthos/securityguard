@@ -1,9 +1,6 @@
 name: Continuous Integration
 
-on:
-  pull_request:
-    types: [opened,synchronize]
-  push:
+on: [push, pull_request]
 
 # Add default permissions of read
 permissions:
@@ -12,22 +9,52 @@ permissions:
 jobs:
   linting:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        id: install-python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: Install Python Dependencies
-        id: install-dependencies
-        run: |
-          pip3 install -r dev-requirements.txt
-
       - name: Python Linting
         id: linting-python
-        uses: thoughtparametersllc/python-linting@fef12457beb0e451d300769c5fc5091124d3bcfa
+        uses: thoughtparametersllc/python-linting@v0.0.8
+        with:
+          python-version: "3.10"
+          requirements-file: "dev-requirements.txt"
+          pylint_options: "--max-line-length=120"
+          black_options: "--line-length 120"
+          mypy_options: "--strict"
+          generate-badges: 'true'
+          badges-directory: '.github/badges'
+          update-readme: 'true'
+          readme-path: 'README.md'
+          badge-style: 'path'
+
+  testing:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Python Testing
+        id: testing-python
+        uses: thoughtparametersllc/python-testing@main
+        with:
+          python-version: '3.10'
+          requirements-file: 'dev-requirements.txt'
+          pytest-options: '--cov --cov-report=xml'
+          unittest-options: '-s tests'
+          nose-options: '--verbose'
+          behave-options: '--no-capture'
+          tox-options: '-e py310'
+          generate-badges: 'true'
+          badges-directory: '.github/badges'
+          update-readme: 'true'
+          readme-path: 'README.md'
+          badge-style: 'path'

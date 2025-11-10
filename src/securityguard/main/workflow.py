@@ -80,27 +80,6 @@ class MainWorkflow:
     def rootkit_check(self):
         """Check for rootkits."""
 
-    def ssh_permit_root_login_check(self):
-        """Check SSH configuration for root login."""
-
-    def unusual_activity_check(self):
-        """Check for unusual activity."""
-
-    def internet_check(self):
-        """Check internet connectivity."""
-
-    def interface_check(self):
-        """Check network interfaces."""
-
-    def dns_poisoning_check(self):
-        """Check for DNS poisoning."""
-
-    def arp_poisoning_check(self):
-        """Check for ARP poisoning."""
-
-    def botnet_check(self):
-        """Check for botnet activity."""
-
     def main(self):
         """Execute the main workflow."""
         self.display_welcome_panel()
@@ -108,10 +87,3 @@ class MainWorkflow:
         self.service_check()
         self.config_check()
         self.rootkit_check()
-        self.ssh_permit_root_login_check()
-        self.unusual_activity_check()
-        self.internet_check()
-        self.interface_check()
-        self.dns_poisoning_check()
-        self.arp_poisoning_check()
-        self.botnet_check()
