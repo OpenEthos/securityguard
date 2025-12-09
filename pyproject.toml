@@ -1,6 +1,6 @@
 [project]
 name = "openethos-securityguard"
-version = "1.2.5" # This will be updated by a script or standalone file
+version = "1.2.6" # This will be updated by a script or standalone file
 description = "A security monitoring and alerting tool."
 readme = "README.md"
 requires-python = ">=3.8"

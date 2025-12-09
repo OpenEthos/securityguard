@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.2.6 (2025-12-09)
+
+### Bug Fixes
+
+- Remove redundant CI/CD badges from README for clarity
+  ([`30ade12`](https://github.com/OpenEthos/securityguard/commit/30ade124d9fc7f114015b5e32c23c6ca2188647e))
+
+### Refactoring
+
+- Remove unused security checks from MainWorkflow for clarity
+  ([`01700e0`](https://github.com/OpenEthos/securityguard/commit/01700e077e23a9e5248b4f18f27bed1542ed5b3a))
+
+
 ## v1.2.5 (2025-11-04)
 
 ### Bug Fixes
