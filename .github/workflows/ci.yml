@@ -23,14 +23,10 @@ jobs:
         with:
           python-version: "3.11"
           requirements-file: "dev-requirements.txt"
-          pylint_options: "--max-line-length=120"
-          black_options: "--line-length 120"
-          mypy_options: "--strict"
-          generate-badges: 'true'
-          badges-directory: '.github/badges'
-          update-readme: 'true'
-          readme-path: 'README.md'
-          badge-style: 'path'
+          pylint-options: "--max-line-length=120"
+          black-options: "--line-length 120"
+          mypy-options: "--strict"
+          commit-badges: "false"
 
   testing:
     runs-on: ubuntu-latest
@@ -38,23 +34,26 @@ jobs:
     permissions:
       contents: write
 
+    needs: linting
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Python Testing
         id: testing-python
-        uses: thoughtparametersllc/python-testing@main
+        uses: thoughtparametersllc/python-unit-testing@v1
         with:
-          python-version: '3.10'
+          python-version: '3.11'
           requirements-file: 'dev-requirements.txt'
           pytest-options: '--cov --cov-report=xml'
-          unittest-options: '-s tests'
-          nose-options: '--verbose'
-          behave-options: '--no-capture'
-          tox-options: '-e py310'
-          generate-badges: 'true'
-          badges-directory: '.github/badges'
-          update-readme: 'true'
-          readme-path: 'README.md'
-          badge-style: 'path'
+          commit-badges: 'false'
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: true
+          verbose: true
+        
+        

@@ -109,16 +109,11 @@ env = [
 ]
 addopts = [
   # TO DEBUG in single process, swap auto to 0
-  # "-nauto",
-  # "-n0",
+  "-nauto",
   "-ra",
   "--diff-symbols",
   "--durations=20",
-  # No default coverage - causes problems with debuggers
-  # "--cov=semantic_release",
-  # "--cov-context=test",
-  # "--cov-report=html:coverage-html",
-  # "--cov-report=term-missing",
+  "--cov-report=xml:coverage.xml,html:coverage.html",
 ]
 markers = [
   "unit: mark a test as a unit test",
@@ -126,50 +121,13 @@ markers = [
   "comprehensive: mark a test as a comprehensive (multiple variations) test",
 ]
 
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist =
-    mypy,
-    py{38,39,310,311,312},
-    coverage
-    ruff
-skipsdist = True
-
-[testenv]
-passenv = CI
-setenv =
-    PYTHONPATH = {toxinidir}
-    TESTING = True
-deps = .[test]
-commands =
-    coverage run -p --source=securityguard -m pytest {posargs:tests}
-
-[testenv:mypy]
-deps = .[mypy]
-commands =
-    mypy .
-
-[testenv:coverage]
-deps = coverage[toml]
-commands =
-    coverage combine
-    coverage report -m
-    coverage xml
-
-[testenv:ruff]
-deps = .[dev]
-commands =
-    ruff check . --statistics --output-format=text
-"""
-
 [tool.ruff]
 line-length = 88
 target-version = "py38"
 force-exclude = true
 output-format = "grouped"
 show-fixes = true
-src = ["semantic_release", "tests"]
+src = ["src/securityguard", "tests"]
 
 [tool.ruff.lint]
 select = ["ALL"]
